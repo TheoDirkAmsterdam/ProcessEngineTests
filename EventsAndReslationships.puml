@@ -1,0 +1,9 @@
+@startuml EventsAndReslationships
+class Event {
+    +id: int
+    +name: string
+    +lastExecutionTime: DateTime
+    +toBeExecutedTime: DateTime
+    +status: string
+
+}
