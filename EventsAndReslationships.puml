@@ -25,8 +25,8 @@ class DateTime <<data>> {
 
 class EventRelationship {
     +id: int
-    +eventId: int
-    +relatedEventId: int
+    +fromEventId: int
+    +toEventId: int
     +eventRelationshipType: EventRelationshipType
     +timeDistance: TimeDistance
 }
