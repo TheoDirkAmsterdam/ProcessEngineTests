@@ -4,6 +4,42 @@ class Event {
     +name: string
     +lastExecutionTime: DateTime
     +toBeExecutedTime: DateTime
-    +status: string
+    +status: EventStatus
+    +automaticExecution: boolean
+    EventRelationship -- Event : from
+    EventRelationship -- Event : to
+}
 
+class EventStatus <<data>> {
+    +included: boolean
+    +pending: boolean
+    +enabled: boolean
+    +executed: boolean
+}
+
+class DateTime <<data>> {
+    +date: string
+    +time: string
+}
+
+class EventRelationship {
+    +id: int
+    +eventId: int
+    +relatedEventId: int
+    +eventRelationshipType: EventRelationshipType
+    +timeDistance: TimeDistance
+}
+
+enum EventRelationshipType {
+    CONDITION
+    RESPONSE
+    INCLUDE
+    EXCLUDE
+    MILESTONE
+}
+
+class TimeDistance <<data>> {
+    +days: int
+    +hours: int
+    +minutes: int
 }
