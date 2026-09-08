@@ -6,9 +6,10 @@ class Event {
     +toBeExecutedTime: DateTime
     +status: EventStatus
     +automaticExecution: boolean
-    EventRelationship -- Event : from
-    EventRelationship -- Event : to
 }
+
+    EventRelationship "*" -- "1" Event : from
+    EventRelationship "*" -- "1" Event : to
 
 class EventStatus <<data>> {
     +included: boolean
